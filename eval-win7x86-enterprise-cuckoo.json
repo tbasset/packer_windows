@@ -53,6 +53,7 @@
         "floppy/win7x86-enterprise/Autounattend.xml",
         "floppy/zz-start-sshd.cmd"
       ],
+      "guest_additions_mode": "attach",
       "guest_os_type": "Windows7",
       "hard_drive_interface": "sata",
       "headless": "{{ user `headless` }}",
@@ -66,13 +67,13 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "1536"
+          "2048"
         ],
         [
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "1"
+          "2"
         ]
       ],
       "vm_name": "eval-win7x86-enterprise",
@@ -108,13 +109,13 @@
           "set",
           "{{.Name}}",
           "--memsize",
-          "1536"
+          "2048"
         ],
         [
           "set",
           "{{.Name}}",
           "--cpus",
-          "1"
+          "2"
         ]
       ],
       "shutdown_command": "{{ user `shutdown_command`}}",
@@ -145,7 +146,6 @@
         "script/vagrant.bat",
         "script/cmtool.bat",
         "script/vmtool.bat",
-        "script/uninstall-7zip.bat",
         "script/python.cmd",
         "script/python-pil.cmd",
         "script/disable-updates.cmd",
@@ -153,8 +153,11 @@
         "script/cuckoo-agent.cmd",
         "script/oldflash.cmd",
         "script/oldfirefox.cmd",
+        "script/ollydbg.cmd",
+        "script/idafree50.cmd",
         "script/clean.bat",
         "script/ultradefrag.bat",
+        "script/uninstall-7zip.bat",
         "script/sdelete.bat"
       ],
       "type": "windows-shell"

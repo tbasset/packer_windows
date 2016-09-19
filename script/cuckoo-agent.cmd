@@ -2,7 +2,6 @@
 @for %%i in (a:\_packer_config*.cmd) do @call "%%~i"
 @if defined PACKER_DEBUG (@echo on) else (@echo off)
 
-@echo on
 if not defined AGENT_URL set AGENT_URL=https://raw.githubusercontent.com/cuckoosandbox/cuckoo/master/agent/agent.py
 
 for %%i in ("%AGENT_URL%") do set AGENT_EXE=%%~nxi

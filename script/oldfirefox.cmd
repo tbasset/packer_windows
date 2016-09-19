@@ -2,7 +2,6 @@
 @for %%i in (a:\_packer_config*.cmd) do @call "%%~i"
 @if defined PACKER_DEBUG (@echo on) else (@echo off)
 
-@echo on
 ::if not defined OLDFIREFOX_URL set OLDFIREFOX_URL=http://download.oldapps.com/Firefox/Firefox%20Setup%2025.0.1.exe
 if not defined OLDFIREFOX_URL set OLDFIREFOX_URL=https://ftp.mozilla.org/pub/firefox/releases/25.0/win32/en-US/Firefox%%%%20Setup%%%%2025.0.exe
 

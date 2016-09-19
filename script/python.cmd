@@ -2,7 +2,14 @@
 @for %%i in (a:\_packer_config*.cmd) do @call "%%~i"
 @if defined PACKER_DEBUG (@echo on) else (@echo off)
 
-if not defined PYTHON_URL set PYTHON_URL=https://www.python.org/ftp/python/2.7.12/python-2.7.12.amd64.msi
+if not defined PYTHON_32_URL set PYTHON_32_URL=https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi
+if not defined PYTHON_64_URL set PYTHON_64_URL=https://www.python.org/ftp/python/2.7.12/python-2.7.12.amd64.msi
+
+if defined ProgramFiles(x86) (
+  set PYTHON_URL=%PYTHON_64_URL%
+) else (
+  set PYTHON_URL=%PYTHON_32_URL%
+)
 
 for %%i in ("%PYTHON_URL%") do set PYTHON_EXE=%%~nxi
 set PYTHON_DIR=%TEMP%\python
