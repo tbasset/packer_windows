@@ -19,8 +19,7 @@
       ],
       "guest_os_type": "windows8srv-64",
       "headless": "{{ user `headless` }}",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
+      "iso_checksum": "sha1:{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
       "shutdown_command": "{{ user `shutdown_command`}}",
       "tools_upload_flavor": "windows",
@@ -58,8 +57,7 @@
       "guest_os_type": "Windows81_64",
       "hard_drive_interface": "sata",
       "headless": "{{ user `headless` }}",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
+      "iso_checksum": "sha1:{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
       "shutdown_command": "{{ user `shutdown_command`}}",
       "type": "virtualbox-iso",
@@ -106,9 +104,7 @@
         "floppy/zz-start-sshd.cmd"
       ],
       "guest_os_type": "win-8.1",
-      "headless": "{{ user `headless` }}",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
+      "iso_checksum": "sha1:{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
       "parallels_tools_flavor": "win",
       "prlctl": [
@@ -182,3 +178,4 @@
     "version": "0.1.0"
   }
 }
+

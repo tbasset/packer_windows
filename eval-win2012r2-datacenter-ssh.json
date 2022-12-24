@@ -17,13 +17,12 @@
       ],
       "guest_os_type": "windows8srv-64",
       "headless": "{{ user `headless` }}",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
+      "iso_checksum": "sha1:{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
       "shutdown_command": "{{ user `shutdown_command`}}",
       "ssh_password": "vagrant",
+      "ssh_timeout": "10000s",
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "windows",
       "type": "vmware-iso",
       "vm_name": "eval-win2012r2-datacenter-ssh",
@@ -53,13 +52,12 @@
       "guest_os_type": "Windows2012_64",
       "hard_drive_interface": "sata",
       "headless": "{{ user `headless` }}",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
+      "iso_checksum": "sha1:{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
       "shutdown_command": "{{ user `shutdown_command`}}",
       "ssh_password": "vagrant",
+      "ssh_timeout": "10000s",
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "10000s",
       "type": "virtualbox-iso",
       "vboxmanage": [
         [
@@ -99,9 +97,7 @@
         "floppy/zz-start-sshd.cmd"
       ],
       "guest_os_type": "win-2008",
-      "headless": "{{ user `headless` }}",
-      "iso_checksum": "{{ user `iso_checksum` }}",
-      "iso_checksum_type": "sha1",
+      "iso_checksum": "sha1:{{ user `iso_checksum` }}",
       "iso_url": "{{ user `iso_url` }}",
       "parallels_tools_flavor": "win",
       "prlctl": [
@@ -126,8 +122,8 @@
       ],
       "shutdown_command": "{{ user `shutdown_command`}}",
       "ssh_password": "vagrant",
+      "ssh_timeout": "10000s",
       "ssh_username": "vagrant",
-      "ssh_wait_timeout": "10000s",
       "type": "parallels-iso",
       "vm_name": "eval-win2012r2-datacenter-ssh"
     }
