@@ -2,7 +2,7 @@ PREDOWNLOADED_FILES=$(wildcard vshell*.*)
 
 CHEF_VERSION?=12.9.38-1
 SALT_VERSION?=2015.8.8-2
-SEVENZIP_VERSION?=1600
+SEVENZIP_VERSION?=2201
 ULTRADEFRAG_VERSION?=7.0.1
 VBOX_VERSION?=5.0.20
 
@@ -21,15 +21,15 @@ LESSMSI_URL?=https://github.com/activescott/lessmsi/releases/download/v1.4/lessm
 MLSSSH_32_URL?=http://www.mls-software.com/files/setupssh-7.2p2-1-v1.exe
 NUGET_URL?=http://nuget.org/nuget.exe
 PUPPET_32_URL?=https://downloads.puppetlabs.com/windows/puppet-latest.msi
-PUPPET_64_URL?=https://downloads.puppetlabs.com/windows/puppet-x64-latest.msi
+PUPPET_64_URL?=https://downloads.puppetlabs.com/windows/puppet7/puppet-agent-x64-latest.msi
 SALT_32_URL?=https://repo.saltstack.com/windows/Salt-Minion-$(SALT_VERSION)-x86-Setup.exe
-SALT_64_URL?=https://repo.saltstack.com/windows/Salt-Minion-$(SALT_VERSION)-AMD64-Setup.exe
+SALT_64_URL?=https://repo.saltproject.io/windows/Salt-Minion-Latest-Py3-AMD64-Setup.exe
 SDELETE_URL?=http://live.sysinternals.com/sdelete.exe
 SEVENZIP_32_URL=http://www.7-zip.org/a/7z$(SEVENZIP_VERSION).msi
 SEVENZIP_64_URL=http://www.7-zip.org/a/7z$(SEVENZIP_VERSION)-x64.msi
 ULTRADEFRAG_32_URL=http://downloads.sourceforge.net/ultradefrag/ultradefrag-portable-$(ULTRADEFRAG_VERSION).bin.i386.zip
 ULTRADEFRAG_64_URL=http://downloads.sourceforge.net/ultradefrag/ultradefrag-portable-$(ULTRADEFRAG_VERSION).bin.amd64.zip
-UNXTUTILS_URL?=http://downloads.sourceforge.net/unxutils/UnxUtils.zip
+UNXTUTILS_URL?=https://freefr.dl.sourceforge.net/project/unxutils/unxutils/current/UnxUtils.zip
 VAGRANT_PUB_URL?=https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub
 VBOX_ISO_URL=http://download.virtualbox.org/virtualbox/$(VBOX_VERSION)/VBoxGuestAdditions_$(VBOX_VERSION).iso
 VMWARE_TOOLS_TAR_URL=https://softwareupdate.vmware.com/cds/vmw-desktop/ws/12.1.1/3770994/windows/packages/tools-windows.tar
@@ -97,7 +97,7 @@ VBoxGuestAdditions.iso \
 $(VBOX_ISO) \
 $(VMWARE_TOOLS_TAR) \
 $(WGET_EXE) \
-windows.iso \
+#windows.iso \
 
 WGET:=wget --no-check-certificate
 
@@ -230,7 +230,7 @@ $(VAGRANT_PUB):
 	-rm -f provisions.iso
 
 VBoxGuestAdditions.iso:
-	cp -p "$$SYSTEMDRIVE/Program Files/Oracle/VirtualBox/VBoxGuestAdditions.iso" $@
+	cp -p "/usr/share/virtualbox/VBoxGuestAdditions.iso" $@
 
 $(VBOX_ISO):
 	$(WGET) -O $@ $(VBOX_ISO_URL)
